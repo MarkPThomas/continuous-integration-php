@@ -33,6 +33,8 @@ script:
 
 after_script:
   - echo $TRAVIS_BUILD_NUMBER
+  - echo $TRAVIS_PULL_REQUEST
+  - echo $TRAVIS_BRANCH
   - export CI_BUILD_NUMBER="0" #"$TRAVIS_BUILD_NUMBER"
 #  - export CI_PULL_REQUEST="$TRAVIS_PULL_REQUEST"
 #  - export CI_BRANCH="$TRAVIS_BRANCH"
@@ -43,7 +45,7 @@ branches:
   only: master
 
 # You can delete the cache using travis-ci web interface
-cache:
-  directories:
-  - vendor
-  - $HOME/.cache/composer
+#cache:
+#  directories:
+#  - vendor
+#  - $HOME/.cache/composer
