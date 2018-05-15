@@ -42,12 +42,12 @@ script:
 
 
 #after_script:
-#after_script:
-# - php vendor/bin/coveralls -v
+after_script:
+ - php vendor/bin/coveralls -v
 
-after_success:
+#after_success:
 # Submit coverage report to Coveralls servers, see .coveralls.yml
-  - travis_retry php coveralls.phar -v
+#  - travis_retry php coveralls.phar -v
 
 #after_failure:
 
