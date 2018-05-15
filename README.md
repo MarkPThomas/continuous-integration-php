@@ -1,7 +1,7 @@
 # continuous-integration-php
 Basic test of PHP continuous integration.
 
-Travis CI: 
+Travis CI: [![Build Status](https://travis-ci.com/MarkPThomas/continuous-integration-php.svg?branch=master)](https://travis-ci.com/MarkPThomas/continuous-integration-php)
 
 Coveralls: 
 
