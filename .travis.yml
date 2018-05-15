@@ -21,8 +21,8 @@ env:
 addons:
   sonarcloud:
     organization: "continuous-integration-php"
-    token:
-      secure: $SONAR_TOKEN  # Specified as SONAR_TOKEN in Repository Settings w/o encryption
+    token: $SONAR_TOKEN
+#      secure: $SONAR_TOKEN  # Specified as SONAR_TOKEN in Repository Settings w/o encryption
 
 install:
   # Install composer packages
