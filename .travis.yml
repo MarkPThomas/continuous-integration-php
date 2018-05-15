@@ -43,9 +43,11 @@ after_script:
   - echo $CI_NAME
   - export CI_JOB_ID="$TRAVIS_JOB_ID"
   - echo $CI_JOB_ID
+
 #  - export CI_PULL_REQUEST="$TRAVIS_PULL_REQUEST"
 #  - export CI_BRANCH="$TRAVIS_BRANCH"
   - php vendor/bin/coveralls -v
+  - echo ./build/logs/coveralls-upload.json
 
 # Tell Travis CI to monitor only 'master' branch
 branches:
