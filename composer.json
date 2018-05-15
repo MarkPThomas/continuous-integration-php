@@ -1,6 +1,6 @@
 {
-    "name": "mark",
-    "description" : "Initial setup of PHP using CI with Travis,Coveralls,and SonarCloud.",
+    "name": "continuous-integration-php",
+    "description" : "Initial setup of PHP using CI with Travis, Coveralls, and SonarCloud.",
     "version": "1.0.0",
     "license": "WTFPL",
     "keywords": ["php", "ci", "continuous-integration"],

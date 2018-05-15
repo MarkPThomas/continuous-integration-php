@@ -8,14 +8,20 @@ php:
     - 7.0
 
 # Note: Code coverage requires php-xDebug extension enabled on CI server
+before_install:
+#  - composer require phpunit/phpunit:4.8.* satooshi/php-coveralls:dev-master
+  - composer require satooshi/php-coveralls:dev-master
+#  - composer install --dev
 
 install:
   # Install composer packages
   - travis_retry composer install --no-interaction --no-suggest
+
   # Install coveralls.phar
   - wget -c -nc --retry-connrefused --tries=0 https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar -O coveralls.phar
   - chmod +x coveralls.phar
   - php coveralls.phar --version
+
 
 # Create a storage folder for coverage report
 before_script:
@@ -24,17 +30,16 @@ before_script:
 
 # Testing the app (see phpunit.xml) for configs, generating Code Coverage report
 script:
-  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+  - ./vendor/bin/phpunit --coverage-clover ./build/logs/clover.xml
 
 
 #after_script:
-
+after_script:
+ - php vendor/bin/coveralls -v
 
 after_success:
 # Submit coverage report to Coveralls servers, see .coveralls.yml
  - travis_retry php coveralls.phar -v
-# Submit coverage report to codecov.io
- - bash <(curl -s https://codecov.io/bash)
 
 #after_failure:
 
