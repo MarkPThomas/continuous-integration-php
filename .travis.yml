@@ -20,7 +20,7 @@ env:
 
 addons:
   sonarcloud:
-    organization: "continuous-integration-php"
+    organization: "markpthomas-github"
     token: $SONAR_TOKEN
 #      secure: $SONAR_TOKEN  # Specified as SONAR_TOKEN in Repository Settings w/o encryption
 
