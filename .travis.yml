@@ -8,8 +8,8 @@ php:
     - 7.0
 
 environment:
-  COVERALLS_REPO_TOKEN: paA4WjNDLj9DiIHDvWJ6GDF2QON8VUNuc
-#    secure: paA4WjNDLj9DiIHDvWJ6GDF2QON8VUNuc
+  COVERALLS_REPO_TOKEN:
+    secure: Akv0BufyuSYL7zT8E4MUFcq1Cj0j9mQaw3xv+JJhhKD4F/j3YTPvz5DBqNvTs5Tu
 
 # Note: Code coverage requires php-xDebug extension enabled on CI server
 #before_install:
