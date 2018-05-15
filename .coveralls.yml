@@ -1,7 +1,7 @@
 # https://stackoverflow.com/questions/39501417/how-can-i-connect-coveralls-and-travis-in-github
-#service_name: travis-ci
-#coverage_clover: build/logs/clover.xml
-#json_path: build/logs/coveralls-upload.json
+service_name: travis-ci
+coverage_clover: build/logs/clover.xml
+json_path: build/logs/coveralls-upload.json
 #repo_token: paA4WjNDLj9DiIHDvWJ6GDF2QON8VUNuc
 
 #coverage_clover: tests/logs/clover.xml
