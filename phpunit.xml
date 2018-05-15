@@ -7,7 +7,7 @@
 
     <filter>
         <whitelist>
-            <directory>./app</directory>
+            <directory>./src</directory>
             <exclude>
                 <directory>./vendor</directory>
                 <directory>./tests</directory>
