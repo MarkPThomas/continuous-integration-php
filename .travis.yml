@@ -19,20 +19,22 @@ php:
 
 install:
   # Install composer packages
-  - travis_retry composer install --no-interaction --no-suggest
+#  - travis_retry composer install --no-interaction --no-suggest
 
   # Install coveralls.phar
-  - wget -c -nc --retry-connrefused --tries=0 https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar -O coveralls.phar
+#  - wget -c -nc --retry-connrefused --tries=0 https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar -O coveralls.phar
 
   # Make coveralls.phar executable: chmod +x on a file (your script) only means, that you'll make it executable.
-  - chmod +x coveralls.phar
-  - php coveralls.phar --version
+#  - chmod +x coveralls.phar
+#  - php coveralls.phar --version
 
+  - composer install --prefer-dist --no-interaction --no-progress
+#  - composer update
 
 # Create a storage folder for coverage report
 before_script:
-    - mkdir -p build/logs
-    - ls -al
+  - mkdir -p build/logs
+  - ls -al
 
 # Testing the app (see phpunit.xml) for configs, generating Code Coverage report
 script:
@@ -45,7 +47,7 @@ script:
 
 after_success:
 # Submit coverage report to Coveralls servers, see .coveralls.yml
- - travis_retry php coveralls.phar -v
+  - travis_retry php coveralls.phar -v
 
 #after_failure:
 

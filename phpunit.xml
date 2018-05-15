@@ -3,7 +3,7 @@
         backupGlobals="true"
         colors="true"
         stopOnFailure="false"
-        bootstrap="tests/helpers/bootstrap.php">
+        bootstrap="./vendor/autoload.php">
 
     <filter>
         <whitelist>
