@@ -35,6 +35,9 @@ after_script:
   - echo $TRAVIS_BUILD_NUMBER
   - echo $TRAVIS_PULL_REQUEST
   - echo $TRAVIS_BRANCH
+  - echo $TRAVIS_JOB_ID
+  - echo $CI_NAME
+  - echo $CI_JOB_ID
   - export CI_BUILD_NUMBER="0" #"$TRAVIS_BUILD_NUMBER"
 #  - export CI_PULL_REQUEST="$TRAVIS_PULL_REQUEST"
 #  - export CI_BRANCH="$TRAVIS_BRANCH"
