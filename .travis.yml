@@ -25,17 +25,7 @@ php:
 
 install:
   # Install composer packages
-#  - travis_retry composer install --no-interaction --no-suggest
-
-  # Install coveralls.phar
-#  - wget -c -nc --retry-connrefused --tries=0 https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar -O coveralls.phar
-
-  # Make coveralls.phar executable: chmod +x on a file (your script) only means, that you'll make it executable.
-#  - chmod +x coveralls.phar
-#  - php coveralls.phar --version
-
   - composer install --prefer-dist --no-interaction --no-progress
-#  - composer update
 
 # Create a storage folder for coverage report
 before_script:
@@ -51,12 +41,6 @@ after_script:
   - export CI_PULL_REQUEST="$TRAVIS_PULL_REQUEST"
   - export CI_BRANCH="$TRAVIS_BRANCH"
   - php vendor/bin/coveralls -v
-
-#after_success:
-# Submit coverage report to Coveralls servers, see .coveralls.yml
-#  - travis_retry php coveralls.phar -v
-
-#after_failure:
 
 # Tell Travis CI to monitor only 'master' branch
 branches:
