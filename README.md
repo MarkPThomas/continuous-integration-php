@@ -4,9 +4,9 @@ Basic test of PHP continuous integration.
 Travis CI: 
 Coveralls: 
 
-##SonarCloud##
+# SonarCloud
 
-Quality: SonarCloud
+Quality: 
 
 Maintainability: 
 
