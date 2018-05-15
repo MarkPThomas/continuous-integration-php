@@ -38,7 +38,7 @@ after_script:
   - echo $TRAVIS_JOB_ID
   - echo $CI_NAME
   - echo $CI_JOB_ID
-  - export CI_BUILD_NUMBER="0" #"$TRAVIS_BUILD_NUMBER"
+  - export CI_BUILD_NUMBER="$TRAVIS_BUILD_NUMBER"
   - export CI_NAME="travis-ci"
   - echo $CI_NAME
   - export CI_JOB_ID="$TRAVIS_JOB_ID"
@@ -47,7 +47,6 @@ after_script:
 #  - export CI_PULL_REQUEST="$TRAVIS_PULL_REQUEST"
 #  - export CI_BRANCH="$TRAVIS_BRANCH"
   - php vendor/bin/coveralls -v
-  - echo ./build/logs/coveralls-upload.json
 
 # Tell Travis CI to monitor only 'master' branch
 branches:
