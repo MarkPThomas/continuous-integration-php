@@ -3,7 +3,7 @@
 #coverage_clover: build/logs/clover.xml
 #json_path: build/logs/coveralls-upload.json
 #repo_token: paA4WjNDLj9DiIHDvWJ6GDF2QON8VUNuc
-src_dir: .
+#src_dir: .
 
 #coverage_clover: tests/logs/clover.xml
 #json_path: tests/logs/coveralls-upload.json
