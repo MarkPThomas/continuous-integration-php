@@ -46,10 +46,11 @@ before_script:
 script:
   - ./vendor/bin/phpunit --coverage-clover ./build/logs/clover.xml
 
-
-#after_script:
 after_script:
- - php vendor/bin/coveralls -v
+  - export CI_BUILD_NUMBER="$TRAVIS_BUILD_NUMBER"
+  - export CI_PULL_REQUEST="$TRAVIS_PULL_REQUEST"
+  - export CI_BRANCH="$TRAVIS_BRANCH"
+  - php vendor/bin/coveralls -v
 
 #after_success:
 # Submit coverage report to Coveralls servers, see .coveralls.yml
