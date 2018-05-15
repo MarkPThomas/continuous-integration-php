@@ -1,5 +1,7 @@
 # Config file for https://travis-ci.org/
 # Validate this file here - http://lint.travis-ci.org/
+dist: trusty
+sudo: required
 
 language: php
 
@@ -7,16 +9,20 @@ language: php
 php:
     - 7.0
 
-#env:
-#  - secure: 6NQVYZhz5skozeomCDyg0iJCXg5zvIIYTqXiZsqXVHGPsQYqUPHBiTtKjO8rMvtKwTzdv1uS1oHpKme53y+D7g==
-#  - COVERALLS_REPO_TOKEN:
-#    - secure: HhoM35ArQ+WQkdZxQIo+19QHoAPRBTiEO1vw78i/naSaJ9EGTMYD1MKJQZRJiOvj
-
 env:
   - COVERALLS_RUN_LOCALLY=1
-#  COVERALLS_REPO_TOKEN=paA4WjNDLj9DiIHDvWJ6GDF2QON8VUNuc
-#  COVERALLS_REPO_TOKEN: paA4WjNDLj9DiIHDvWJ6GDF2QON8VUNuc
+  # - secure: ######  # Specified as COVERALLS_REPO_TOKEN in Repository Settings w/o encryption
+  #
+  # Otherwise, try
+  # The key encryption of'COVERALLS_RUN_LOCALLY=xxx' at https://ci.appveyor.com/tools/encrypt
+  # Or try using: https://travis-encrypt.github.io/
+  # (see https://github.com/travis-ci/travis-ci/issues/9510)
 
+addons:
+  sonarcloud:
+    organization: "continuous-integration-php"
+#    token:
+#      secure: ""  # Specified as SONAR_TOKEN in Repository Settings w/o encryption
 
 install:
   # Install composer packages
@@ -30,13 +36,9 @@ before_script:
 # Testing the app (see phpunit.xml) for configs, generating Code Coverage report
 script:
   - ./vendor/bin/phpunit --coverage-clover ./build/logs/clover.xml
+  - sonar-scanner
 
 after_script:
-#  - export CI_PULL_REQUEST="$TRAVIS_PULL_REQUEST"
-#  - export CI_BRANCH="$TRAVIS_BRANCH"
-#  - export CI_JOB_ID="$TRAVIS_JOB_ID"
-#  - export CI_BUILD_NUMBER="$TRAVIS_BUILD_NUMBER"
-#  - export CI_NAME="travis-ci"
   - php vendor/bin/coveralls -v
 
 # Tell Travis CI to monitor only 'master' branch
@@ -44,7 +46,8 @@ branches:
   only: master
 
 # You can delete the cache using travis-ci web interface
-#cache:
-#  directories:
-#  - vendor
-#  - $HOME/.cache/composer
+cache:
+  directories:
+    - 'vendor'
+    - '$HOME/.cache/composer'
+    - '$HOME/.sonar/cache'
