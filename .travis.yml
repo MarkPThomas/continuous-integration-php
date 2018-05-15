@@ -17,11 +17,6 @@ php:
 #  COVERALLS_REPO_TOKEN=paA4WjNDLj9DiIHDvWJ6GDF2QON8VUNuc
 #  COVERALLS_REPO_TOKEN: paA4WjNDLj9DiIHDvWJ6GDF2QON8VUNuc
 
-# Note: Code coverage requires php-xDebug extension enabled on CI server
-#before_install:
-#  - composer require phpunit/phpunit:4.8.* satooshi/php-coveralls:dev-master
-#  - composer require satooshi/php-coveralls:dev-master
-#  - composer install --dev
 
 install:
   # Install composer packages
