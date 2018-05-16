@@ -30,7 +30,7 @@ before_script:
 # Testing the app (see phpunit.xml) for configs, generating Code Coverage report
 script:
   - ./vendor/bin/phpunit --coverage-clover ./build/logs/clover.xml
-  - ./vendor/bin/phpunit --junit ./build/logs/junit.xml
+  - ./vendor/bin/phpunit --log-junit ./build/logs/junit.xml
 after_script:
   - php vendor/bin/coveralls -v
   - sonar-scanner -X
