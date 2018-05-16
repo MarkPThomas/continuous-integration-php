@@ -14,9 +14,9 @@
             </exclude>
         </whitelist>
     </filter>
-
-    <testsuite name="Math Test Suite">
-        <directory suffix=".php">./tests</directory>
-    </testsuite>
-
+    <testsuites>
+        <testsuite name="Math Test Suite">
+            <directory suffix=".php">./tests</directory>
+        </testsuite>
+    </testsuites>
 </phpunit>
