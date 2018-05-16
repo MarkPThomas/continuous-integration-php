@@ -2,6 +2,7 @@
 <phpunit
         backupGlobals="true"
         colors="true"
+        verbose="true"
         stopOnFailure="false"
         bootstrap="./vendor/autoload.php">
     <testsuites>
@@ -10,10 +11,10 @@
         </testsuite>
     </testsuites>
 
-    <!--<logging>-->
-        <!--<log type="coverage-clover" target="build/logs/clover.xml"/>-->
-        <!--<log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false"/>-->
-    <!--</logging>-->
+    <logging>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+        <log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false"/>
+    </logging>
 
     <filter>
         <whitelist>

@@ -2,7 +2,7 @@
 composer.lock
 composer_2.phar
 /vendor
-
+/build
 
 # JetBrains
 .idea/
