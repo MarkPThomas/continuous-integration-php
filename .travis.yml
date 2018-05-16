@@ -39,10 +39,10 @@ before_script:
 # Testing the app (see phpunit.xml) for configs, generating Code Coverage report
 script:
   - ./vendor/bin/phpunit --coverage-clover ./build/logs/clover.xml
-  - sonar-scanner -X
 
 after_script:
   - php vendor/bin/coveralls -v
+  - sonar-scanner -X
 
 # Tell Travis CI to monitor only 'master' branch
 branches:
