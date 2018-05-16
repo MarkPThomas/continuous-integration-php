@@ -5,7 +5,7 @@
         stopOnFailure="false"
         bootstrap="./vendor/autoload.php">
     <testsuites>
-        <testsuite name="Math Test Suite">
+        <testsuite name="MathTestSuite">
             <directory suffix=".php">tests</directory>
         </testsuite>
     </testsuites>
