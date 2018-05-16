@@ -3,7 +3,7 @@
     "description" : "Initial setup of PHP using CI with Travis, Coveralls, and SonarCloud.",
     "version": "1.0.0",
     "license": "WTFPL",
-    "keywords": ["php", "ci", "continuous-integration"],
+    "keywords": ["php", "ci", "continuous-integration", "travis-ci", "sonarcloud", "sonarqube-scan", "coveralls"],
     "require": {
         "php": ">=7.0.25"
     },
