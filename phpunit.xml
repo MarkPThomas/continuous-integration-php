@@ -4,7 +4,11 @@
         colors="true"
         stopOnFailure="false"
         bootstrap="./vendor/autoload.php">
-
+    <testsuites>
+        <testsuite name="Math Test Suite">
+            <directory suffix=".php">./tests</directory>
+        </testsuite>
+    </testsuites>
     <filter>
         <whitelist>
             <directory>./src</directory>
@@ -14,9 +18,4 @@
             </exclude>
         </whitelist>
     </filter>
-    <testsuites>
-        <testsuite name="Math Test Suite">
-            <directory suffix=".php">./tests</directory>
-        </testsuite>
-    </testsuites>
 </phpunit>
